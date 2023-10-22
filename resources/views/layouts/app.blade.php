@@ -25,10 +25,10 @@
                         @auth
                             <a href="{{ url('/') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">Home</a>
                         @else
-                            <a href="{{ route('login') }}" class="font-semibold @if(Route::currentRouteName() == 'login') text-blue-600 @else text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white @endif">Log in</a>
+                            <a href="{{ route('login') }}" class="font-semibold @if(Route::currentRouteName() == 'login') text-blue-600 @else hover:text-gray-900 dark:text-gray-400 dark:hover:text-white @endif">Log in</a>
 
                             @if (Route::has('register'))
-                                <a href="{{ route('register') }}" class="ml-4 font-semibold @if(Route::currentRouteName() == 'register') text-blue-600 @else text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white @endif">Register</a>
+                                <a href="{{ route('register') }}" class="ml-4 font-semibold @if(Route::currentRouteName() == 'register') text-blue-600 @else hover:text-gray-900 dark:text-gray-400 dark:hover:text-white @endif">Register</a>
                             @endif
                         @endauth
                 @endif
@@ -49,17 +49,7 @@
                 <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Features</a>
                 <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Marketplace</a>
                 <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Company</a>
-                @if (Route::has('login'))
-                        @auth
-                            <a href="{{ url('/') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">Home</a>
-                        @else
-                            <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">Log in</a>
-
-                            @if (Route::has('register'))
-                                <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">Register</a>
-                            @endif
-                        @endauth
-                @endif
+                <a href="{{route("logout")}}" class="text-sm font-semibold leading-6 text-gray-900">Log Out</a>
               </div>
             </nav>
           </header>
